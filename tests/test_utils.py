@@ -9,7 +9,7 @@ from collatz import utils
   [ 
   	(11, '11 ,34 ,17 ,52 ,26 ,13 ,40 ,20 ,10 ,5 ,16 ,8 ,4 ,2 ,1'), 
   	(3, '3 ,10 ,5 ,16 ,8 ,4 ,2 ,1'), 
-  	('bad' , 'Input inválido.'), 
+  	('bad' , 'Input invalido.'), 
   ])
 def test_collatz_sequence( n, expected ):
 	assert utils.collatz_sequence( n ) == expected
