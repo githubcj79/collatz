@@ -18,7 +18,7 @@ def collatz_sequence( input ):
 	try:
 		n = int( input )
 	except Exception as e:
-		return "Input inválido."
+		return "Input invalido."
 
 	list_ = []
 	while not n == 1:
