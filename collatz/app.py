@@ -1,15 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# from flask import Flask, jsonify, abort, make_response
-
-# @app.route('/collatz/api/v1.0/<int:input>', methods=['GET'])
-# def get_task(task_id):
-#     task = [task for task in tasks if task['id'] == task_id]
-#     if len(task) == 0:
-#         abort(404)
-#     return jsonify({'task': task[0]})
-
 from flask import Flask, jsonify, abort, make_response
 import utils
 
