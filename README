@@ -1,0 +1,76 @@
+PRUEBA DE HABILIDAD - INGENIERO DE SOFTWARE
+ESPECIALIZACIÓN QA SIXBELL
+------------------------------------------------------------------------
+
+CREACIÓN WEB SERVICE
+
+	El desarrollo se hizo en un host Ubuntu 19.10.
+	Se utilizó un entorno virtual con Python 3.7.5, creado con pipenv.
+	Se usó Flask para la implementación del webservice.
+	Se usó Git durante todo el desarrollo.
+	La estructura del proyecto es la que se muestra a continuación:
+
+	.
+	├── collatz
+	│   ├── app.py
+	│   ├── init__.py
+	│   └── utils.py
+	├── Pipfile
+	├── Pipfile.lock
+	├── qualification-tests.pdf
+	├── README
+	└── tests
+	    ├── test_app.py
+	    └── test_utils.py
+
+TEST DEL DESARROLLO
+
+	Las pruebas apuntaron a dos objetivos:
+	- validar la implementación de la secuencia collatz.
+	- validar el comportamiento del webservice.
+	Ambos sets de pruebas se automatizaron con el uso de pytest.
+
+REPORTE DE TEST
+
+	1- Reporte de resultados con el webservice arriba.
+
+		~/Documents/Jobs/Xinerlink/collatz$ pipenv run python -m pytest
+		========================= test session starts ======================================
+		platform linux -- Python 3.7.5, pytest-5.3.2, py-1.8.1, pluggy-0.13.1
+		rootdir: /home/carlos/Documents/Jobs/Xinerlink/collatz
+		collected 6 items                                                                                                                            
+
+		tests/test_app.py ...                                                                                                                  [ 50%]
+		tests/test_utils.py ...                                                                                                                [100%]
+
+		=============================== 6 passed in 0.18s =================================
+
+	2- Reporte de resultados con el webservice abajo.
+
+		~/Documents/Jobs/Xinerlink/collatz$ pipenv run python -m pytest
+		============================= test session starts ===================================
+		platform linux -- Python 3.7.5, pytest-5.3.2, py-1.8.1, pluggy-0.13.1
+		rootdir: /home/carlos/Documents/Jobs/Xinerlink/collatz
+		collected 6 items                                                                                                                            
+
+		tests/test_app.py FFF                                                                                                                  [ 50%]
+		tests/test_utils.py ...                                                                                                                    [100%]
+
+		================================ FAILURES ========================================
+		____________________ test_app[200-http://localhost:5000/collatz/api/v1.0/3] ___________________________
+		============================ 3 failed, 3 passed in 0.80s ================================
+
+
+EVALUACIÓN Y COMUNICACIÓN
+
+	El código generado está disponible en https://github.com/githubcj79/collatz.git
+	y ha sido compartido a luis.acuna@sixbell.com
+
+
+NOTA: el webservice se levanta así:
+			~/Documents/Jobs/Xinerlink/collatz$ pipenv run ./collatz/app.py
+
+Saludos,
+Carlos Jiménez,
+carlosjmnz79@gmail.com 
+cel: (+56) 9 6372 4870
