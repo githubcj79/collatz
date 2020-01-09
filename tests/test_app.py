@@ -1,28 +1,17 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from pprint import pprint
+import pytest
 import requests
-from pprint import pprint 
 
-
-# try:
-# 	n = int( input )
-# except Exception as e:
-# 	abort(404)
-
-
-def test_app( url ):
-	try:
-		response = requests.get( url )
-		pprint( response .status_code )
-		pprint( response.json()  )
-	except Exception as e:
-		print ("Requests fallo.\n", e)
-
-
-def main():
-	test_app( "http://localhost:5000/collatz/api/v1.0/3" )
-	test_app( "http://localhost:5000/collatz/api/v1.0/bad" )
-
-if __name__ == '__main__':
-	main()
+@pytest.mark.parametrize(
+  "status_code,url",
+  [ 
+  	(200, 'http://localhost:5000/collatz/api/v1.0/3'), 
+  	(200, 'http://localhost:5000/collatz/api/v1.0/15'), 
+  	(404, 'http://localhost:5000/collatz/api/v1.0/bad'), 
+  ])
+def test_app( status_code, url ):
+	response = requests.get( url )
+	assert response .status_code == status_code
